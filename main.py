@@ -67,7 +67,7 @@ def get_process_list():
         line = str(line)
         proc_info = re.findall(r'\S+', line)
         print(proc_info)
-        process_list.append(Process(proc_info))
+        process_list.append(proc_info)
     return process_list
 
 
@@ -76,12 +76,13 @@ stdout.write('Reading Process list...\n')
 process_cmd = []
 process_pid = []
 for process in process_list:
-    process_cmd.append(process.name())
-    process_pid.append(process.procid())
+    process_cmd.append('%s' % process[10])
+    process_pid.append('%s' % process[1])
 l1 = ["logkey", "keylog", "keysniff", "kisni", "lkl", "ttyrpld", "uber", "vlogger"]
 record = 0
 flag = 1
 for x in process_cmd:
+    print("x: " + x)
     for y in l1:
         if (x.find(y) > -1):
             stdout.write("KeyLogger Detected: \nThe following proccess may be a keylogger: \n\n\t" + process_pid[
