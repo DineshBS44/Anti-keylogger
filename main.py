@@ -78,7 +78,7 @@ process_pid = []
 for process in process_list:
     process_cmd.append('%s' % process[10])
     process_pid.append('%s' % process[1])
-l1 = ["logkey", "keylog", "keysniff", "kisni", "lkl", "ttyrpld", "uber", "vlogger"]
+l1 = ["logkey", "keylog", "keysniff", "kisni", "lkl", "ttyrpld", "uber", "vlogger", "node"]
 record = 0
 flag = 1
 for x in process_cmd:
